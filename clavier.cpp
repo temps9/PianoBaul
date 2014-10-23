@@ -21,64 +21,83 @@ clavier::clavier ():QWidget ()
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-        
-  piano2_bouton = new QPushButton ("1", this);
-  piano2_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano2_bouton->setGeometry (220 * calcul_position.width () / 400,
+ 
+ 
+ piano2 = new QSpinBox(this);
+ piano2->setGeometry (220 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-  piano3_bouton = new QPushButton ("2", this);
-  piano3_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano3_bouton->setGeometry (240 * calcul_position.width () / 400,
+piano2->setMaximum(255);
+QString nombre2=QString::number(piano2->value());
+QObject::connect (piano2, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+ 
+       
+ piano3 = new QSpinBox(this);
+ piano3->setGeometry (240 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);   
+        50 * calcul_position.height () / 700); 
+piano3->setMaximum(255);
+QString nombre3=QString::number(piano3->value());
+QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 (int))); 
         
-  piano4_bouton = new QPushButton ("3", this);
-  piano4_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano4_bouton->setGeometry (260 * calcul_position.width () / 400,
+       
+ piano4 = new QSpinBox(this);
+ piano4->setGeometry (260 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);         
+        50 * calcul_position.height () / 700);  
+piano4->setMaximum(255);
+QString nombre4=QString::number(piano4->value());
+QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));        
         
-  piano5_bouton = new QPushButton ("4", this);
-  piano5_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano5_bouton->setGeometry (280 * calcul_position.width () / 400,
-        600 * calcul_position.height () / 700,
-        20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);       
-        
-  piano6_bouton = new QPushButton ("5", this);
-  piano6_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano6_bouton->setGeometry (300 * calcul_position.width () / 400,
-        600 * calcul_position.height () / 700,
-        20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);
-        
-        
-  piano7_bouton = new QPushButton ("6", this);
-  piano7_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano7_bouton->setGeometry (320 * calcul_position.width () / 400,
+       
+ piano5 = new QSpinBox(this);
+ piano5->setGeometry (300 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-  piano8_bouton = new QPushButton ("7", this);
-  piano8_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano8_bouton->setGeometry (340 * calcul_position.width () / 400,
+piano5->setMaximum(255);
+QString nombre5=QString::number(piano5->value());
+QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano6 = new QSpinBox(this);
+ piano6->setGeometry (300 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);   
-        
-  piano9_bouton = new QPushButton ("8", this);
-  piano9_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano9_bouton->setGeometry (360 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);
+piano6->setMaximum(255);
+QString nombre6=QString::number(piano6->value());
+QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano7 = new QSpinBox(this);
+ piano7->setGeometry (320 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);         
+        50 * calcul_position.height () / 700);
+piano7->setMaximum(255);
+QString nombre7=QString::number(piano7->value());
+QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano8 = new QSpinBox(this);
+ piano8->setGeometry (340 * calcul_position.width () / 400,
+        600 * calcul_position.height () / 700,
+        20 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);
+piano8->setMaximum(255);
+QString nombre8=QString::number(piano8->value());
+QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int))); 
+
+ piano9 = new QSpinBox(this);
+ piano9->setGeometry (360 * calcul_position.width () / 400,
+        600 * calcul_position.height () / 700,
+        20 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);
+piano9->setMaximum(255);
+QString nombre9=QString::number(piano9->value());
+QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));  
+     
         
   piano10_bouton = new QPushButton ("9", this);
   piano10_bouton->setFont (QFont ("Comic Sans MS", 10));
@@ -88,63 +107,79 @@ clavier::clavier ():QWidget ()
         50 * calcul_position.height () / 700);                
  /*******************************************************/
  
-  piano1a_bouton = new QPushButton ("10", this);
-  piano1a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano1a_bouton->setGeometry (200 * calcul_position.width () / 400,
+ 
+  piano1a = new QSpinBox(this);
+ piano1a->setGeometry (200 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-        
-  piano2a_bouton = new QPushButton ("1", this);
-  piano2a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano2a_bouton->setGeometry (220 * calcul_position.width () / 400,
+piano1a->setMaximum(255);
+QString nombre1a=QString::number(piano1a->value());
+QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano2a = new QSpinBox(this);
+ piano2a->setGeometry (220 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-  piano3a_bouton = new QPushButton ("2", this);
-  piano3a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano3a_bouton->setGeometry (240 * calcul_position.width () / 400,
+piano2a->setMaximum(255);
+QString nombre2a=QString::number(piano2a->value());
+QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano3a = new QSpinBox(this);
+ piano3a->setGeometry (240 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);   
-        
-  piano4a_bouton = new QPushButton ("3", this);
-  piano4a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano4a_bouton->setGeometry (260 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);  
+piano3a->setMaximum(255);
+QString nombre3a=QString::number(piano3a->value());
+QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int))); 
+
+ piano4a = new QSpinBox(this);
+ piano4a->setGeometry (260 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);         
-        
-  piano5a_bouton = new QPushButton ("4", this);
-  piano5a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano5a_bouton->setGeometry (280 * calcul_position.width () / 400,
-        650 * calcul_position.height () / 700,
-        20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);       
-        
-  piano6a_bouton = new QPushButton ("5", this);
-  piano6a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano6a_bouton->setGeometry (300 * calcul_position.width () / 400,
-        650 * calcul_position.height () / 700,
-        20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);
-        
-        
-  piano7a_bouton = new QPushButton ("6", this);
-  piano7a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano7a_bouton->setGeometry (320 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700); 
+piano4a->setMaximum(255);
+QString nombre4a=QString::number(piano4a->value());
+QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));       
+
+ piano5a = new QSpinBox(this);
+ piano5a->setGeometry (280 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-        
-  piano8a_bouton = new QPushButton ("7", this);
-  piano8a_bouton->setFont (QFont ("Comic Sans MS", 10));
-  piano8a_bouton->setGeometry (340 * calcul_position.width () / 400,
+piano5a->setMaximum(255);
+QString nombre5a=QString::number(piano5a->value());
+QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+
+ piano6a = new QSpinBox(this);
+ piano6a->setGeometry (300 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
-        50 * calcul_position.height () / 700);   
+        50 * calcul_position.height () / 700);
+piano6a->setMaximum(255);
+QString nombre6a=QString::number(piano6a->value());
+QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+        
+ piano7a = new QSpinBox(this);
+ piano7a->setGeometry (320 * calcul_position.width () / 400,
+        650 * calcul_position.height () / 700,
+        20 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);
+piano7a->setMaximum(255);
+QString nombre7a=QString::number(piano7a->value());
+QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+        
+ piano8a = new QSpinBox(this);
+ piano8a->setGeometry (340 * calcul_position.width () / 400,
+        650 * calcul_position.height () / 700,
+        20 * calcul_position.width () / 400,
+        50 * calcul_position.height () / 700);
+piano8a->setMaximum(255);
+QString nombre8a=QString::number(piano8a->value());
+QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+  
         
   piano9a_bouton = new QPushButton ("8", this);
   piano9a_bouton->setFont (QFont ("Comic Sans MS", 10));
@@ -359,8 +394,8 @@ clavier::clavier ():QWidget ()
         100 * calcul_position.height () / 700);
 
   QObject::connect (aa_bouton, SIGNAL (clicked()), qApp, SLOT (quit ()));
-  QObject::connect (piano2_bouton, SIGNAL (clicked ()), this, SLOT (fonctionpiano1 ()));
-  QObject::connect (piano3_bouton, SIGNAL (clicked ()), this, SLOT (fonctionpiano2 ()));
+//  QObject::connect (piano2, SIGNAL (clicked ()), this, SLOT (fonctionpiano1 ()));
+//  QObject::connect (piano3_bouton, SIGNAL (clicked ()), this, SLOT (fonctionpiano2 ()));
 
   for(char c ='a'; c<='z'; c++)
    {
