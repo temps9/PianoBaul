@@ -7,7 +7,6 @@
 #include "fronts.h"
 
 void genereFichierJo(char c);
-void genereFichierJo1(char c);
 void conversionJoWav(char c, int n);
 
 #endif // _AdnForme_h_
