@@ -22,6 +22,7 @@
 #endif
 
 #include "convertisseur.h"
+#include <qspinbox.h>
 
 using namespace std;
 class clavier : public QWidget
@@ -33,24 +34,27 @@ class clavier : public QWidget
   clavier();
 
   private:
-  QPushButton *piano1a_bouton;
-  QPushButton *piano2a_bouton;
-  QPushButton *piano3a_bouton;
-  QPushButton *piano4a_bouton;
-  QPushButton *piano5a_bouton;
-  QPushButton *piano6a_bouton;
-  QPushButton *piano7a_bouton;
-  QPushButton *piano8a_bouton;
+ 
+  
+  QSpinBox *piano1a;
+  QSpinBox *piano2a;
+  QSpinBox *piano3a;
+  QSpinBox *piano4a;
+  QSpinBox *piano5a;
+  QSpinBox *piano6a;
+  QSpinBox *piano7a;
+  QSpinBox *piano8a;
   QPushButton *piano9a_bouton;
   QPushButton *piano10a_bouton;
-  QPushButton *piano2_bouton;
-  QPushButton *piano3_bouton;
-  QPushButton *piano4_bouton;
-  QPushButton *piano5_bouton;
-  QPushButton *piano6_bouton;
-  QPushButton *piano7_bouton;
-  QPushButton *piano8_bouton;
-  QPushButton *piano9_bouton;
+  QSpinBox *piano2;
+  QLabel *texte;
+  QSpinBox *piano3;
+  QSpinBox *piano4;
+  QSpinBox *piano5;
+  QSpinBox *piano6;
+  QSpinBox *piano7;
+  QSpinBox *piano8;
+  QSpinBox *piano9;
   QPushButton *piano10_bouton;
   QSignalMapper *sm;
   QPushButton *aa_bouton;
