@@ -78,8 +78,17 @@ class clavier : public QWidget
    void fonctiontouche (int c);
    void keyPressEvent(QKeyEvent* event);
    void aasynthe (char c, int n);
-   void fonctionpiano1 ();
-   void fonctionpiano2 ();
+   void fonctionpiano1 (int valeur);
+   void fonctionpiano2 (int valeur);
+   void fonctionpiano3 (int amplitude0);
+   void fonctionpiano4 (int amplitude1);
+   void fonctionpiano5 (int dureefront0);
+   void fonctionpiano6 (int dureefront1);
+   void fonctionpiano7 (int changeamplitude0);
+   void fonctionpiano8 (int changeamplitude1);
+   void fonctionpiano9 (int changedureefront0);
+   void fonctionpiano10 (int changedureefront1);
+
 
 };
 
