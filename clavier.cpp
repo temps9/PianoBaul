@@ -54,7 +54,7 @@ QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         
        
  piano5 = new QSpinBox(this);
- piano5->setGeometry (300 * calcul_position.width () / 400,
+ piano5->setGeometry (280 * calcul_position.width () / 400,
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
@@ -405,14 +405,52 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
   connect(sm, SIGNAL(mapped(int)), this, SLOT(fonctiontouche(int)));
 }
 
-void clavier::fonctionpiano1()
+void clavier::fonctionpiano1(int valeur)
 {
-quelpiano = 1;
+    quelpiano = valeur;
+    system("rm *.jo && rm *.wav");
 }
-void clavier::fonctionpiano2()
+void clavier::fonctionpiano2(int valeur)
 {
-quelpiano = 2;
+
+    system("rm *.jo && rm *.wav");
 }
+void clavier::fonctionpiano3(int amplitude0)
+{
+
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano4(int amplitude1)
+{
+    system("rm *.jo && rm *.wav");
+}
+
+void clavier::fonctionpiano5 (int dureefront0)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano6 (int dureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano7 (int changeamplitude0)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano8 (int changeamplitude1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano9 (int changedureefront0)
+{
+    system("rm *.jo && rm *.wav");
+
+}
+void clavier::fonctionpiano10 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+/************************************/
 
 void clavier::fonctiontouche(int ic)
 {
