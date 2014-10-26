@@ -3,13 +3,15 @@
 
 struct jo
 {
+  int amplitude[14];
+  int dureefront[14];
+  int changeamplitude[14];
+  int changedureefront[14];
   int duree;
   int laforceh;
   int laforceb;
-  int amplitude[4];
-  int dureefront[4];
-  int changeamplitude[4];
-  int changedureefront[4];
+  int tremolo;
+  int forceplus;
   int combiendezonememoire;
 };
 
