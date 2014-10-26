@@ -2,6 +2,7 @@
 
 
 int quelpiano = 1;
+int amplitude[17];
 
 clavier::clavier ():QWidget ()
 {
@@ -50,7 +51,7 @@ QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 
         50 * calcul_position.height () / 700);  
 piano4->setMaximum(255);
 QString nombre4=QString::number(piano4->value());
-QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));        
+QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 (int)));        
         
        
  piano5 = new QSpinBox(this);
@@ -60,7 +61,7 @@ QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano5->setMaximum(255);
 QString nombre5=QString::number(piano5->value());
-QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano4 (int)));
 
  piano6 = new QSpinBox(this);
  piano6->setGeometry (300 * calcul_position.width () / 400,
@@ -69,7 +70,7 @@ QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano6->setMaximum(255);
 QString nombre6=QString::number(piano6->value());
-QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano5 (int)));
 
  piano7 = new QSpinBox(this);
  piano7->setGeometry (320 * calcul_position.width () / 400,
@@ -78,7 +79,7 @@ QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano7->setMaximum(255);
 QString nombre7=QString::number(piano7->value());
-QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano6 (int)));
 
  piano8 = new QSpinBox(this);
  piano8->setGeometry (340 * calcul_position.width () / 400,
@@ -87,7 +88,7 @@ QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano8->setMaximum(255);
 QString nombre8=QString::number(piano8->value());
-QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int))); 
+QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano7 (int))); 
 
  piano9 = new QSpinBox(this);
  piano9->setGeometry (360 * calcul_position.width () / 400,
@@ -96,7 +97,7 @@ QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano9->setMaximum(255);
 QString nombre9=QString::number(piano9->value());
-QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));  
+QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 (int)));  
      
         
   piano10_bouton = new QPushButton ("9", this);
@@ -115,7 +116,7 @@ QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         50 * calcul_position.height () / 700);
 piano1a->setMaximum(255);
 QString nombre1a=QString::number(piano1a->value());
-QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano9 (int)));
 
  piano2a = new QSpinBox(this);
  piano2a->setGeometry (220 * calcul_position.width () / 400,
@@ -124,7 +125,7 @@ QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);
 piano2a->setMaximum(255);
 QString nombre2a=QString::number(piano2a->value());
-QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano10 (int)));
 
  piano3a = new QSpinBox(this);
  piano3a->setGeometry (240 * calcul_position.width () / 400,
@@ -133,7 +134,7 @@ QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);  
 piano3a->setMaximum(255);
 QString nombre3a=QString::number(piano3a->value());
-QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int))); 
+QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano11 (int))); 
 
  piano4a = new QSpinBox(this);
  piano4a->setGeometry (260 * calcul_position.width () / 400,
@@ -142,7 +143,7 @@ QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700); 
 piano4a->setMaximum(255);
 QString nombre4a=QString::number(piano4a->value());
-QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));       
+QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano12 (int)));       
 
  piano5a = new QSpinBox(this);
  piano5a->setGeometry (280 * calcul_position.width () / 400,
@@ -151,7 +152,7 @@ QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);
 piano5a->setMaximum(255);
 QString nombre5a=QString::number(piano5a->value());
-QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano13 (int)));
 
  piano6a = new QSpinBox(this);
  piano6a->setGeometry (300 * calcul_position.width () / 400,
@@ -160,7 +161,7 @@ QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);
 piano6a->setMaximum(255);
 QString nombre6a=QString::number(piano6a->value());
-QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano14 (int)));
         
  piano7a = new QSpinBox(this);
  piano7a->setGeometry (320 * calcul_position.width () / 400,
@@ -169,7 +170,7 @@ QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);
 piano7a->setMaximum(255);
 QString nombre7a=QString::number(piano7a->value());
-QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano15 (int)));
         
  piano8a = new QSpinBox(this);
  piano8a->setGeometry (340 * calcul_position.width () / 400,
@@ -178,7 +179,7 @@ QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         50 * calcul_position.height () / 700);
 piano8a->setMaximum(255);
 QString nombre8a=QString::number(piano8a->value());
-QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
+QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano16 (int)));
   
         
   piano9a_bouton = new QPushButton ("8", this);
@@ -407,30 +408,36 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
 
 void clavier::fonctionpiano1(int valeur)
 {
+
     quelpiano = valeur;
+printf ("fonctionpiano1 %d \n", quelpiano);
     system("rm *.jo && rm *.wav");
 }
-void clavier::fonctionpiano2(int valeur)
+void clavier::fonctionpiano2(int valeur1)
 {
-
+printf ("fonctionpiano2 %d\n", valeur1); 
     system("rm *.jo && rm *.wav");
 }
-void clavier::fonctionpiano3(int amplitude0)
+void clavier::fonctionpiano3(int valeur2)
 {
-
+amplitude[0] = valeur2;
+printf ("fonctionpiano3 %d", amplitude[0]); 
     system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano4(int amplitude1)
 {
+printf ("fonctionpiano4 %d", quelpiano); 
     system("rm *.jo && rm *.wav");
 }
 
 void clavier::fonctionpiano5 (int dureefront0)
 {
+printf ("fonctionpiano5 %d", quelpiano); 
     system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano6 (int dureefront1)
 {
+printf ("fonctionpiano6 %d", quelpiano); 
     system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano7 (int changeamplitude0)
@@ -447,6 +454,30 @@ void clavier::fonctionpiano9 (int changedureefront0)
 
 }
 void clavier::fonctionpiano10 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano11 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano12 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano13 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano14 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano15 (int changedureefront1)
+{
+    system("rm *.jo && rm *.wav");
+}
+void clavier::fonctionpiano16 (int changedureefront1)
 {
     system("rm *.jo && rm *.wav");
 }
@@ -573,7 +604,118 @@ case 2 :
 
  break;
 
+case 3 :
+      genereFichierJo2(c);
+      conversionJoWav(c,n);
 
+ break;
+
+case 4 :
+      genereFichierJo3(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 5 :
+      genereFichierJo4(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 6 :
+      genereFichierJo5(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 7 :
+      genereFichierJo6(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 8 :
+      genereFichierJo7(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 9 :
+      genereFichierJo8(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 10 :
+      genereFichierJo9(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 11 :
+      genereFichierJo10(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 12 :
+      genereFichierJo11(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 13 :
+      genereFichierJo12(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 14 :
+      genereFichierJo13(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 15 :
+      genereFichierJo14(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 16 :
+      genereFichierJo15(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 17 :
+      genereFichierJo16(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 18 :
+      genereFichierJo17(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 19 :
+      genereFichierJo18(c);
+      conversionJoWav(c,n);
+
+ break;
+
+case 20 :
+      genereFichierJo19(c);
+      conversionJoWav(c,n);
+
+case 21 :
+      genereFichierJo20(c);
+      conversionJoWav(c,n);
+
+
+ break;
 default: 
 
       genereFichierJo(c);
