@@ -4,18 +4,7 @@ void genereFichierJo(char c)
 {
 
 jo joc = mesjo[c-'a'];
-  /*
-  printf("duree=%d, laforceb=%d, laforceh=%d, amplitude={%d, %d, %d, %d},\n",
-        joc.duree, joc.laforceb, joc.laforceh,
-        joc.amplitude[0], joc.amplitude[1], joc.amplitude[2], joc.amplitude[3]);
-  printf("dureefront={%d, %d, %d, %d}, changeamplitude={%d, %d, %d, %d},\n",
-        joc.dureefront[0], joc.dureefront[1], joc.dureefront[2], joc.dureefront[3],
-        joc.changeamplitude[0], joc.changeamplitude[1], joc.changeamplitude[2], joc.changeamplitude[3]);
-  printf("changedureefront={%d, %d, %d, %d}, combiendezonememoire=%d\n\n",
-        joc.changedureefront[0], joc.changedureefront[1], joc.changedureefront[2], joc.changedureefront[3],
-        joc.combiendezonememoire);
-  exit(0);
-  */
+
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
@@ -38,67 +27,161 @@ jo joc = mesjo[c-'a'];
 
 // ici commence la zone de travail pour l'apprenant
 
+int dureebase[4];
+      for(int i=0; i<6; i++)
+       {dureebase[i] = joc.dureefront[i];}
+
   for(int duree = joc.duree; duree>0; duree--)
    {
 
-    for(int laforcebbase = joc.laforceb; laforcebbase > 0; laforcebbase--)
-     {
-      for(int i=0; i<4; i++)
-       {
-        fprintf(fichierjo,  "%c%c",    (char)joc.amplitude[i], (char)joc.dureefront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)joc.amplitude[i], (unsigned char)joc.dureefront[i]);
-       }
-     }
 
-    int variforce = joc.laforceb;
-
-    // Descente laforceb
+    // monte laforceh
     for(int laforcehbase = joc.laforceh; laforcehbase > 0; laforcehbase--)
      {
-      for(int i=0; i<4; i++)
+      for(int i=0; i<6; i++)
        {
         if(i%2)
          joc.amplitude[i] -= joc.changeamplitude[i];
         else
          joc.amplitude[i] += joc.changeamplitude[i];
 
-        joc.dureefront[i] += joc.changedureefront[i];
-       }
+//        if(i%2)
+//        joc.dureefront[i] -= joc.changedureefront[i];
 
-      for(int laforcebbase = variforce; laforcebbase > 0; laforcebbase--)
-       {
-        for(int i=0; i<4; i++)
-         {
+        if(joc.dureefront[i] < 6)
+         joc.dureefront[i] = 6;
+        if(joc.amplitude[i] < 6)
+         joc.amplitude[i] = 6;
+        if(joc.amplitude[i] > 240)
+         joc.amplitude[i] = 240;
           fprintf(fichierjo,  "%c%c",    (char)joc.amplitude[i], (char)joc.dureefront[i]);
           fprintf(fichierjoa, "%d %d\n", (unsigned char)joc.amplitude[i], (unsigned char)joc.dureefront[i]);
-         }
+
        }
-      variforce++;
+
+
+
      }
+
+
+
+    int variforce = joc.dureefront[0];
+    int variforce1 = joc.dureefront[2];
+    int variforce2 = joc.dureefront[4];
+	joc.dureefront[0] = joc.dureefront[1];
+	joc.dureefront[2] = joc.dureefront[3];
+	joc.dureefront[4] = joc.dureefront[5];
+	joc.dureefront[1] = variforce;
+	joc.dureefront[3] = variforce1;
+	joc.dureefront[5] = variforce2;
+
+
+//tremolo
+
+    // monte laforceh
+    for(int laforcehbase = joc.forceplus; laforcehbase > 0; laforcehbase--)
+     {//2
+
+
+   for(int laforcebbase = joc.laforceb; laforcebbase > 0; laforcebbase--)
+     {//2
+
+
+      for(int i=0; i<6; i++)
+       {//3
+
+        if(i%2)
+         joc.amplitude[i] += joc.changeamplitude[i];
+        else
+         joc.amplitude[i] -= joc.changeamplitude[i];
+
+       if(i%2)
+        joc.dureefront[i] += joc.changedureefront[i];
+        else
+         joc.dureefront[i] -= joc.changedureefront[i];
+
+          fprintf(fichierjo,  "%c%c",    (char)joc.amplitude[i], (char)joc.dureefront[i]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)joc.amplitude[i], (unsigned char)joc.dureefront[i]);
+
+       }//3
+    	variforce = joc.dureefront[0];
+    	variforce1 = joc.dureefront[2];
+    	variforce2 = joc.dureefront[4];
+	joc.dureefront[0] = joc.dureefront[1];
+	joc.dureefront[2] = joc.dureefront[3];
+	joc.dureefront[4] = joc.dureefront[5];
+	joc.dureefront[1] = variforce;
+	joc.dureefront[3] = variforce1;
+	joc.dureefront[5] = variforce2;
+
+       }//2
+
+   for(int laforcebbase = joc.laforceb; laforcebbase > 0; laforcebbase--)
+     {
+
+
+      for(int i=0; i<6; i++)
+       {
+        if(i%2)
+         joc.amplitude[i] -= joc.changeamplitude[i];
+        else
+         joc.amplitude[i] += joc.changeamplitude[i];
+
+       if(i%2)
+        joc.dureefront[i] -= joc.changedureefront[i];
+        else
+         joc.dureefront[i] += joc.changedureefront[i];
+
+          fprintf(fichierjo,  "%c%c",    (char)joc.amplitude[i], (char)joc.dureefront[i]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)joc.amplitude[i], (unsigned char)joc.dureefront[i]);
+
+       }
+
+    	variforce = joc.dureefront[0];
+    	variforce1 = joc.dureefront[2];
+    	variforce2 = joc.dureefront[4];
+	joc.dureefront[0] = joc.dureefront[1];
+	joc.dureefront[2] = joc.dureefront[3];
+	joc.dureefront[4] = joc.dureefront[5];
+	joc.dureefront[1] = variforce;
+	joc.dureefront[3] = variforce1;
+	joc.dureefront[5] = variforce2;
+       }
+       }//fin de zone tremolo
+
+
+
+
 
     // Descente laforceh
     for(int laforcehbase = joc.laforceh; laforcehbase > 0; laforcehbase--)
      {
-      for(int i=0; i<4; i++)
+
+
+      for(int i=0; i<6; i++)
        {
+
         if(i%2)
          joc.amplitude[i] += joc.changeamplitude[i];
         else
          joc.amplitude[i] -= joc.changeamplitude[i];
 
-        joc.dureefront[i] -= joc.changedureefront[i];
-       }
-      for(int laforcebbase = variforce; laforcebbase > 0; laforcebbase--)
-       {
-        for(int i=0; i<4; i++)
-         {
+
+
           fprintf(fichierjo,  "%c%c",    (char)joc.amplitude[i], (char)joc.dureefront[i]);
           fprintf(fichierjoa, "%d %d\n", (unsigned char)joc.amplitude[i], (unsigned char)joc.dureefront[i]);
-         }
-       }
-      variforce--;
+
+
+
+
+
+      for(int i=0; i<6; i++)
+       {joc.dureefront[i] = dureebase[i] - joc.changedureefront[i]; }
+
      }
 
+
+   }
     // Écriture des zones mémoires
     for(int zonememoire = joc.combiendezonememoire; zonememoire > 0 ; zonememoire--)
      {
@@ -107,9 +190,7 @@ jo joc = mesjo[c-'a'];
       fprintf(fichierjo,  "%c%c", 128, 250);
       fprintf(fichierjoa, "%d %d\n", 128, 250);
      }
-   }
   fclose(fichierjo);
   fclose(fichierjoa);
 }
-
 // fin de la zone de travail de l'apprenant
