@@ -88,7 +88,13 @@ class clavier : public QWidget
    void fonctionpiano8 (int changeamplitude1);
    void fonctionpiano9 (int changedureefront0);
    void fonctionpiano10 (int changedureefront1);
-
+   void fonctionpiano11 (int valeur);
+   void fonctionpiano12 (int valeur);
+   void fonctionpiano13 (int valeur);
+   void fonctionpiano14 (int valeur);
+   void fonctionpiano15 (int valeur);
+   void fonctionpiano16 (int valeur);
+   void fonctioneffacetout ();
 
 };
 
