@@ -2,7 +2,7 @@
 
 
 int quelpiano = 1;
-int amplitude[17];
+
 
 clavier::clavier ():QWidget ()
 {
@@ -39,9 +39,10 @@ QObject::connect (piano2, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700); 
-piano3->setMaximum(255);
+piano3->setRange(1, 40);
 QString nombre3=QString::number(piano3->value());
 QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 (int))); 
+piano3->setValue(35);
         
        
  piano4 = new QSpinBox(this);
@@ -49,9 +50,10 @@ QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);  
-piano4->setMaximum(255);
+piano4->setRange(16, 239);
 QString nombre4=QString::number(piano4->value());
-QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 (int)));        
+QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 (int)));
+piano3->setValue(133);       
         
        
  piano5 = new QSpinBox(this);
@@ -424,62 +426,71 @@ printf ("fonctionpiano2 %d\n", valeur1);
 }
 void clavier::fonctionpiano3(int valeur2)
 {
-amplitude[0] = valeur2;
-printf ("fonctionpiano3 %d", amplitude[0]); 
+int ausuivant;
+char fichierfronts[20];
+//sprintf(fichierfronts, "awk 'NR==5 {$2="%d"}1' fronts.cpp", valeur2);
+//sprintf(fichierfronts, "awk 'NR==5 {$2="selectamplitude"}1' fronts.cpp");
+//sprintf(fichierfronts, "awk 'NR==5 {$2="\%d"}1' fronts.cpp", valeur2);
+//sprintf(fichierfronts, "awk 'NR==5 {$2="\valeur2"}1' fronts.cpp");
+  ausuivant = system (fichierfronts);
+  if (ausuivant == EOF);
+
+//    system("awk 'NR==2 {$2="selectamplitude"}1' fronts.cpp");
+printf ("fonctionpiano3 %d", selectamplitude); 
 }
-void clavier::fonctionpiano4(int amplitude1)
+void clavier::fonctionpiano4(int valeur3)
 {
-printf ("fonctionpiano4 %d", quelpiano); 
+printf ("fonctionpiano4 %d", valeur3); 
 }
 
-void clavier::fonctionpiano5 (int dureefront0)
+void clavier::fonctionpiano5 (int valeur4)
 {
-printf ("fonctionpiano5 %d", quelpiano); 
+printf ("fonctionpiano5 %d", valeur4); 
 }
-void clavier::fonctionpiano6 (int dureefront1)
+void clavier::fonctionpiano6 (int valeur5)
 {
-printf ("fonctionpiano6 %d", quelpiano); 
+printf ("fonctionpiano6 %d", valeur5); 
 }
-void clavier::fonctionpiano7 (int changeamplitude0)
+void clavier::fonctionpiano7 (int valeur6)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano7 %d", valeur6);
 }
-void clavier::fonctionpiano8 (int changeamplitude1)
+void clavier::fonctionpiano8 (int valeur7)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano8 %d", valeur7);
 }
-void clavier::fonctionpiano9 (int changedureefront0)
+void clavier::fonctionpiano9 (int valeur8)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano9 %d", valeur8);
 
 }
-void clavier::fonctionpiano10 (int changedureefront1)
+void clavier::fonctionpiano10 (int valeur9)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano10 %d", valeur9);
 }
-void clavier::fonctionpiano11 (int changedureefront1)
+void clavier::fonctionpiano11 (int valeur10)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano11 %d", valeur10);
 }
-void clavier::fonctionpiano12 (int changedureefront1)
+void clavier::fonctionpiano12 (int valeur11)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano12 %d", valeur11);
 }
-void clavier::fonctionpiano13 (int changedureefront1)
+void clavier::fonctionpiano13 (int valeur12)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano13 %d", valeur12);
 }
-void clavier::fonctionpiano14 (int changedureefront1)
+void clavier::fonctionpiano14 (int valeur13)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano14 %d", valeur13);
 }
-void clavier::fonctionpiano15 (int changedureefront1)
+void clavier::fonctionpiano15 (int valeur14)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano15 %d", valeur14);
 }
-void clavier::fonctionpiano16 (int changedureefront1)
+void clavier::fonctionpiano16 (int valeur15)
 {
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano16 %d", valeur15);
 }
 /************************************/
 
