@@ -29,7 +29,7 @@ clavier::clavier ():QWidget ()
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 400,
         50 * calcul_position.height () / 700);
-piano2->setMaximum(255);
+piano2->setRange(1, 40);
 QString nombre2=QString::number(piano2->value());
 QObject::connect (piano2, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
  
@@ -182,7 +182,7 @@ QString nombre8a=QString::number(piano8a->value());
 QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano16 (int)));
   
         
-  piano9a_bouton = new QPushButton ("8", this);
+  piano9a_bouton = new QPushButton ("rm", this);
   piano9a_bouton->setFont (QFont ("Comic Sans MS", 10));
   piano9a_bouton->setGeometry (360 * calcul_position.width () / 400,
         650 * calcul_position.height () / 700,
@@ -396,7 +396,7 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
 
   QObject::connect (aa_bouton, SIGNAL (clicked()), qApp, SLOT (quit ()));
 //  QObject::connect (piano2, SIGNAL (clicked ()), this, SLOT (fonctionpiano1 ()));
-//  QObject::connect (piano3_bouton, SIGNAL (clicked ()), this, SLOT (fonctionpiano2 ()));
+ QObject::connect (piano9a_bouton, SIGNAL (clicked ()), this, SLOT (fonctioneffacetout ()));
 
   for(char c ='a'; c<='z'; c++)
    {
@@ -406,39 +406,39 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
   connect(sm, SIGNAL(mapped(int)), this, SLOT(fonctiontouche(int)));
 }
 
+
+void clavier::fonctioneffacetout ()
+{
+    system("rm *.jo && rm *.wav && *.joa");
+}
+
 void clavier::fonctionpiano1(int valeur)
 {
-
     quelpiano = valeur;
-printf ("fonctionpiano1 %d \n", quelpiano);
-    system("rm *.jo && rm *.wav");
+printf ("fonctionpiano1 %d\n", valeur); 
 }
 void clavier::fonctionpiano2(int valeur1)
 {
 printf ("fonctionpiano2 %d\n", valeur1); 
-    system("rm *.jo && rm *.wav");
+
 }
 void clavier::fonctionpiano3(int valeur2)
 {
 amplitude[0] = valeur2;
 printf ("fonctionpiano3 %d", amplitude[0]); 
-    system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano4(int amplitude1)
 {
 printf ("fonctionpiano4 %d", quelpiano); 
-    system("rm *.jo && rm *.wav");
 }
 
 void clavier::fonctionpiano5 (int dureefront0)
 {
 printf ("fonctionpiano5 %d", quelpiano); 
-    system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano6 (int dureefront1)
 {
 printf ("fonctionpiano6 %d", quelpiano); 
-    system("rm *.jo && rm *.wav");
 }
 void clavier::fonctionpiano7 (int changeamplitude0)
 {
@@ -595,127 +595,172 @@ void clavier::aasynthe(char c, int n)
 case 1 :
       genereFichierJo(c);
       conversionJoWav(c,n);
-
  break;
-
 case 2 :
       genereFichierJo1(c);
       conversionJoWav(c,n);
-
  break;
-
 case 3 :
       genereFichierJo2(c);
       conversionJoWav(c,n);
-
  break;
-
 case 4 :
       genereFichierJo3(c);
       conversionJoWav(c,n);
-
  break;
-
 case 5 :
       genereFichierJo4(c);
       conversionJoWav(c,n);
-
  break;
-
 case 6 :
       genereFichierJo5(c);
       conversionJoWav(c,n);
-
  break;
-
 case 7 :
       genereFichierJo6(c);
       conversionJoWav(c,n);
-
  break;
-
 case 8 :
       genereFichierJo7(c);
       conversionJoWav(c,n);
-
  break;
-
 case 9 :
       genereFichierJo8(c);
       conversionJoWav(c,n);
 
  break;
-
 case 10 :
       genereFichierJo9(c);
       conversionJoWav(c,n);
-
  break;
-
 case 11 :
       genereFichierJo10(c);
       conversionJoWav(c,n);
-
  break;
 
 case 12 :
       genereFichierJo11(c);
       conversionJoWav(c,n);
-
  break;
-
 case 13 :
       genereFichierJo12(c);
       conversionJoWav(c,n);
-
  break;
-
 case 14 :
       genereFichierJo13(c);
       conversionJoWav(c,n);
-
  break;
-
 case 15 :
       genereFichierJo14(c);
       conversionJoWav(c,n);
-
  break;
-
 case 16 :
       genereFichierJo15(c);
       conversionJoWav(c,n);
-
  break;
-
 case 17 :
       genereFichierJo16(c);
       conversionJoWav(c,n);
-
  break;
-
 case 18 :
       genereFichierJo17(c);
       conversionJoWav(c,n);
-
  break;
-
 case 19 :
       genereFichierJo18(c);
       conversionJoWav(c,n);
-
  break;
-
 case 20 :
       genereFichierJo19(c);
       conversionJoWav(c,n);
-
+ break;
 case 21 :
       genereFichierJo20(c);
       conversionJoWav(c,n);
-
+ break;
+case 22 :
+      genereFichierJo21(c);
+      conversionJoWav(c,n);
+ break;
+case 23 :
+      genereFichierJo22(c);
+      conversionJoWav(c,n);
+ break;
+case 24 :
+      genereFichierJo23(c);
+      conversionJoWav(c,n);
+ break;
+case 25 :
+      genereFichierJo24(c);
+      conversionJoWav(c,n);
+ break;
+case 26 :
+      genereFichierJo25(c);
+      conversionJoWav(c,n);
+ break;
+case 27 :
+      genereFichierJo26(c);
+      conversionJoWav(c,n);
+ break;
+case 28 :
+      genereFichierJo27(c);
+      conversionJoWav(c,n);
+ break;
+case 29 :
+      genereFichierJo28(c);
+      conversionJoWav(c,n);
 
  break;
+case 30 :
+      genereFichierJo29(c);
+      conversionJoWav(c,n);
+ break;
+case 31 :
+      genereFichierJo30(c);
+      conversionJoWav(c,n);
+ break;
+
+case 32 :
+      genereFichierJo31(c);
+      conversionJoWav(c,n);
+ break;
+case 33 :
+      genereFichierJo32(c);
+      conversionJoWav(c,n);
+ break;
+case 34 :
+      genereFichierJo33(c);
+      conversionJoWav(c,n);
+ break;
+case 35 :
+      genereFichierJo34(c);
+      conversionJoWav(c,n);
+ break;
+case 36 :
+      genereFichierJo35(c);
+      conversionJoWav(c,n);
+ break;
+case 37 :
+      genereFichierJo36(c);
+      conversionJoWav(c,n);
+ break;
+case 38 :
+      genereFichierJo37(c);
+      conversionJoWav(c,n);
+ break;
+case 39 :
+      genereFichierJo38(c);
+      conversionJoWav(c,n);
+ break;
+case 40 :
+      genereFichierJo39(c);
+      conversionJoWav(c,n);
+ break;
+case 41 :
+      genereFichierJo40(c);
+      conversionJoWav(c,n);
+ break;
+
 default: 
 
       genereFichierJo(c);
