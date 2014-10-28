@@ -5,6 +5,12 @@
 int quelpiano = 1;
 int selecampli1 =133;
 int selecampli2 =130;
+int selecdure1 =50;
+int selecdure2 =50;
+int selecvara1 =0;
+int selecvara2 =0;
+int selecvardu1 =0;
+int selecvardu2 =0;
 
 clavier::clavier ():QWidget ()
 {
@@ -424,6 +430,12 @@ void clavier::fonctionacte ()
     {
         fseek(fichier, 77, SEEK_SET);
 	fprintf(fichier, "%d", selecampli1);
+        fseek(fichier, 82, SEEK_SET);
+	fprintf(fichier, "%d", selecampli2);
+        fseek(fichier, 165, SEEK_SET);
+	fprintf(fichier, "%d", selecdure1);
+        fseek(fichier, 170, SEEK_SET);
+	fprintf(fichier, "%d", selecdure2);
         fclose(fichier);
     }
 }
@@ -440,65 +452,35 @@ printf ("fonctionpiano2 %d\n", valeur1);
 }
 void clavier::fonctionpiano3(int valeur2)
 {
-//int ausuivant;
-//char fichierfronts[40];
-//sprintf(fichierfronts, "awk 'NR==5 {$2="%d"}1' fronts.cpp", valeur2);
-//sprintf(fichierfronts, "awk 'NR==5 {$2="valeur2"}1' fronts.cpp");
-//sprintf(fichierfronts, "awk 'NR==5 {$2="\%d"}1' fronts.cpp", valeur2);
-//sprintf(fichierfronts, "awk 'NR==5 {$2=\"%d\"}1' fronts.cpp",valeur2);
-//sprintf(fichierfronts, "sed -i '5s/[0-2]\+/%d/'  fronts.cpp",valeur2);
-
-//  ausuivant = system (fichierfronts);
-//  if (ausuivant == EOF);
-
-//    system("awk 'NR==2 {$2="valeur2"}1' fronts.cpp");
-//printf("%s", fichierfronts);
-
 selecampli1 = valeur2;
-
-/*
-   FILE* fichier = NULL;
-
-   fichier = fopen ("fronts.cpp", "r+");
-    if (fichier != NULL)
-    {
-        fseek(fichier, 81, SEEK_SET);
-//        fputc(valeur2, fichier); 
-        fclose(fichier);
-    }
-
-*/
-
 }
 void clavier::fonctionpiano4(int valeur3)
 {
-printf ("fonctionpiano4 %d", valeur3); 
+selecampli2 = valeur3;
 }
-
 void clavier::fonctionpiano5 (int valeur4)
 {
-printf ("fonctionpiano5 %d", valeur4); 
+selecdure1 = valeur4;
 }
 void clavier::fonctionpiano6 (int valeur5)
 {
-printf ("fonctionpiano6 %d", valeur5); 
+selecdure1 = valeur5; 
 }
 void clavier::fonctionpiano7 (int valeur6)
 {
-printf ("fonctionpiano7 %d", valeur6);
+selecvara1 = valeur6;
 }
 void clavier::fonctionpiano8 (int valeur7)
 {
-printf ("fonctionpiano8 %d", valeur7);
+selecvara2 = valeur7;
 }
 void clavier::fonctionpiano9 (int valeur8)
 {
-printf ("fonctionpiano9 %d", valeur8);
-
+selecvardu1 = valeur8;
 }
 void clavier::fonctionpiano10 (int valeur9)
 {
-printf ("fonctionpiano10 %d", valeur9);
+selecvardu1 = valeur9;
 }
 void clavier::fonctionpiano11 (int valeur10)
 {
