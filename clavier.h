@@ -22,7 +22,11 @@
 #endif
 
 #include "convertisseur.h"
+#include "AdnForme.h"
 #include <qspinbox.h>
+
+
+
 
 using namespace std;
 class clavier : public QWidget
@@ -32,6 +36,17 @@ class clavier : public QWidget
 
   public:
   clavier();
+    int mesamplifront[2]; //son du n, la référence
+    int mesdurerfront[2]; //son du n, la référence
+    int mesvarampli[2]; //son du n, la référence
+    int mesvardurer[2]; //son du n, la référence
+    int madurer; //son du n, la référence
+    int maforceh;
+    int maforceb;
+    int montremolo;
+    int maforceplus;
+    int macombiendezonememoire;
+
 
   private:
  
@@ -95,6 +110,7 @@ class clavier : public QWidget
    void fonctionpiano15 (int valeur14);
    void fonctionpiano16 (int valeur15);
    void fonctioneffacetout ();
+   void fonctionacte ();
 
 };
 
