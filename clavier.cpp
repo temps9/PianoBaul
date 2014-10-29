@@ -11,6 +11,12 @@ int selecvara1 =0;
 int selecvara2 =0;
 int selecvardu1 =0;
 int selecvardu2 =0;
+int selectduree = 30;
+int selectforceh = 30;
+int selectforceb = 30;
+int selecttremolo = 1;
+int selectforceplus = 1;
+int selectzonememoire = 1;
 
 clavier::clavier ():QWidget ()
 {
@@ -69,7 +75,7 @@ QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano5->setMaximum(255);
+piano5->setRange(16, 239);
 QString nombre5=QString::number(piano5->value());
 QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano4 (int)));
 
@@ -78,7 +84,7 @@ QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano4 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano6->setMaximum(255);
+piano6->setRange(6, 239);
 QString nombre6=QString::number(piano6->value());
 QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano5 (int)));
 
@@ -87,7 +93,7 @@ QObject::connect (piano6, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano5 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano7->setMaximum(255);
+piano7->setRange(6, 239);
 QString nombre7=QString::number(piano7->value());
 QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano6 (int)));
 
@@ -96,7 +102,7 @@ QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano6 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano8->setMaximum(255);
+piano8->setRange(0, 60);
 QString nombre8=QString::number(piano8->value());
 QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano7 (int))); 
 
@@ -105,7 +111,7 @@ QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano7 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano9->setMaximum(255);
+piano9->setRange(0, 60);
 QString nombre9=QString::number(piano9->value());
 QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 (int)));  
      
@@ -124,7 +130,7 @@ QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano1a->setMaximum(255);
+piano1a->setRange(0, 60);
 QString nombre1a=QString::number(piano1a->value());
 QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano9 (int)));
 
@@ -133,7 +139,7 @@ QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano9
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano2a->setMaximum(255);
+piano2a->setRange(0, 60);
 QString nombre2a=QString::number(piano2a->value());
 QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano10 (int)));
 
@@ -142,7 +148,7 @@ QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);  
-piano3a->setMaximum(255);
+piano3a->setRange(1, 200);
 QString nombre3a=QString::number(piano3a->value());
 QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano11 (int))); 
 
@@ -151,7 +157,7 @@ QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700); 
-piano4a->setMaximum(255);
+piano4a->setRange(1, 100);
 QString nombre4a=QString::number(piano4a->value());
 QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano12 (int)));       
 
@@ -160,7 +166,7 @@ QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano5a->setMaximum(255);
+piano5a->setRange(1, 200);
 QString nombre5a=QString::number(piano5a->value());
 QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano13 (int)));
 
@@ -178,7 +184,7 @@ QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano7a->setMaximum(255);
+piano7a->setRange(1, 10);
 QString nombre7a=QString::number(piano7a->value());
 QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano15 (int)));
         
@@ -187,7 +193,7 @@ QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano8a->setMaximum(255);
+piano8a->setRange(0, 200);
 QString nombre8a=QString::number(piano8a->value());
 QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano16 (int)));
   
@@ -419,26 +425,53 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
 
 void clavier::fonctioneffacetout ()
 {
-    system("rm *.jo && rm *.wav && *.joa");
+    system("rm *.jo && rm *.wav && rm *.joa");
 }
 
 void clavier::fonctionacte ()
 {
    FILE* fichier = NULL;
-   fichier = fopen ("fronts.cpp", "r+");
+   fichier = fopen ("fronts.txt", "w+");
     if (fichier != NULL)
     {
-        fseek(fichier, 77, SEEK_SET);
-	fprintf(fichier, "%d", selecampli1);
-        fseek(fichier, 82, SEEK_SET);
-	fprintf(fichier, "%d", selecampli2);
-        fseek(fichier, 165, SEEK_SET);
-	fprintf(fichier, "%d", selecdure1);
-        fseek(fichier, 170, SEEK_SET);
-	fprintf(fichier, "%d", selecdure2);
+          fprintf(fichier, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d\n", selecampli1, selecampli2, selecdure1, selecdure2, selecvara1, selecvara2, selecvardu1, selecvardu2, selectduree, selectforceh, selectforceb, selecttremolo, selectforceplus, selectzonememoire);
         fclose(fichier);
     }
+
+void litfichier();
+
+  char nomfichierwav[32];
+  char nomfichierwavacte[40];
+  char lettresclaviers[] = {97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123};
+  char c;
+        for(int i=0; i<26; i++)
+         {
+    c = lettresclaviers[i];
+    for(int n=1; n<6; n++)
+     {
+  snprintf(nomfichierwav, 32, "%c%d.wav", c, n);
+  FILE * fichierwav;
+  if (!(fichierwav=fopen(nomfichierwav, "r")))
+  // sinon, on le génère
+   {
+if (n==1)
+  {
+    genereFichierJo(c);
+    conversionJoWav(c,n);
+  }
+else
+  {    
+  snprintf(nomfichierwavacte, 40, "sox %c1.wav %c%d.wav", c, c, n);
+system(nomfichierwavacte);
+  }
+   }
+  else
+   fclose(fichierwav);
 }
+}
+
+}
+
 
 void clavier::fonctionpiano1(int valeur)
 {
@@ -480,31 +513,31 @@ selecvardu1 = valeur8;
 }
 void clavier::fonctionpiano10 (int valeur9)
 {
-selecvardu1 = valeur9;
+selecvardu2 = valeur9;
 }
 void clavier::fonctionpiano11 (int valeur10)
 {
-printf ("fonctionpiano11 %d", valeur10);
+selectduree = valeur10;
 }
 void clavier::fonctionpiano12 (int valeur11)
 {
-printf ("fonctionpiano12 %d", valeur11);
+selectforceh = valeur11;
 }
 void clavier::fonctionpiano13 (int valeur12)
 {
-printf ("fonctionpiano13 %d", valeur12);
+selectforceb = valeur12;
 }
 void clavier::fonctionpiano14 (int valeur13)
 {
-printf ("fonctionpiano14 %d", valeur13);
+selecttremolo = valeur13;
 }
 void clavier::fonctionpiano15 (int valeur14)
 {
-printf ("fonctionpiano15 %d", valeur14);
+selectforceplus = valeur14;
 }
 void clavier::fonctionpiano16 (int valeur15)
 {
-printf ("fonctionpiano16 %d", valeur15);
+selectzonememoire = valeur15;
 }
 /************************************/
 
@@ -618,6 +651,7 @@ void clavier::aasynthe(char c, int n)
      switch (quelpiano) {
 
 case 1 :
+
       genereFichierJo(c);
       conversionJoWav(c,n);
  break;
