@@ -73,6 +73,12 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
         else
          mesamplifront[i] += mesvarampli[i];
 	
+	 // respect des limites
+	if(mesamplifront[i]>239)
+	mesamplifront[i] = 239;
+
+	if(mesamplifront[i]<16)
+	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
         fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
@@ -106,6 +112,12 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
         else
          mesamplifront[i] -= mesvarampli[i];
 	
+	 // respect des limites
+	if(mesamplifront[i]>239)
+	mesamplifront[i] = 239;
+
+	if(mesamplifront[i]<16)
+	mesamplifront[i] = 16;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
         fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
