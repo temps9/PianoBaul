@@ -92,12 +92,12 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
         fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 
 
      }
@@ -113,12 +113,12 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
         fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
      }
 
 
@@ -151,12 +151,12 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
         fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[1]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
      }
 
 
