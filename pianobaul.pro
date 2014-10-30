@@ -53,7 +53,7 @@ SOURCES += main.cpp \
            fronts.cpp \
            convertisseur.cpp \
            AdnForme.cpp \
-	   Adnforme1.cpp \
+	   AdnForme1.cpp \
            AdnForme2.cpp \
            AdnForme3.cpp \
            AdnForme4.cpp \
