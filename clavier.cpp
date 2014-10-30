@@ -7,11 +7,11 @@ int selecampli1 =133;
 int selecampli2 =130;
 int selecdure1 =50;
 int selecdure2 =50;
-int selecvara1 =0;
-int selecvara2 =0;
+int selecvara1 =1;
+int selecvara2 =1;
 int selecvardu1 =0;
 int selecvardu2 =0;
-int selectduree = 30;
+int selectduree = 1;
 int selectforceh = 30;
 int selectforceb = 30;
 int selecttremolo = 1;
@@ -452,20 +452,191 @@ void litfichier();
   snprintf(nomfichierwav, 32, "%c%d.wav", c, n);
   FILE * fichierwav;
   if (!(fichierwav=fopen(nomfichierwav, "r")))
-  // sinon, on le génère
-   {
-if (n==1)
-  {
-    genereFichierJo(c);
-    conversionJoWav(c,n);
-  }
+    // sinon, on le génère
+     {
+     
+     switch (quelpiano) {
+
+case 1 :
+
+      genereFichierJo(c);
+      conversionJoWav(c,n);
+ break;
+case 2 :
+      genereFichierJo1(c);
+      conversionJoWav(c,n);
+ break;
+case 3 :
+      genereFichierJo2(c);
+      conversionJoWav(c,n);
+ break;
+case 4 :
+      genereFichierJo3(c);
+      conversionJoWav(c,n);
+ break;
+case 5 :
+      genereFichierJo4(c);
+      conversionJoWav(c,n);
+ break;
+case 6 :
+      genereFichierJo5(c);
+      conversionJoWav(c,n);
+ break;
+case 7 :
+      genereFichierJo6(c);
+      conversionJoWav(c,n);
+ break;
+case 8 :
+      genereFichierJo7(c);
+      conversionJoWav(c,n);
+ break;
+case 9 :
+      genereFichierJo8(c);
+      conversionJoWav(c,n);
+
+ break;
+case 10 :
+      genereFichierJo9(c);
+      conversionJoWav(c,n);
+ break;
+case 11 :
+      genereFichierJo10(c);
+      conversionJoWav(c,n);
+ break;
+
+case 12 :
+      genereFichierJo11(c);
+      conversionJoWav(c,n);
+ break;
+case 13 :
+      genereFichierJo12(c);
+      conversionJoWav(c,n);
+ break;
+case 14 :
+      genereFichierJo13(c);
+      conversionJoWav(c,n);
+ break;
+case 15 :
+      genereFichierJo14(c);
+      conversionJoWav(c,n);
+ break;
+case 16 :
+      genereFichierJo15(c);
+      conversionJoWav(c,n);
+ break;
+case 17 :
+      genereFichierJo16(c);
+      conversionJoWav(c,n);
+ break;
+case 18 :
+      genereFichierJo17(c);
+      conversionJoWav(c,n);
+ break;
+case 19 :
+      genereFichierJo18(c);
+      conversionJoWav(c,n);
+ break;
+case 20 :
+      genereFichierJo19(c);
+      conversionJoWav(c,n);
+ break;
+case 21 :
+      genereFichierJo20(c);
+      conversionJoWav(c,n);
+ break;
+case 22 :
+      genereFichierJo21(c);
+      conversionJoWav(c,n);
+ break;
+case 23 :
+      genereFichierJo22(c);
+      conversionJoWav(c,n);
+ break;
+case 24 :
+      genereFichierJo23(c);
+      conversionJoWav(c,n);
+ break;
+case 25 :
+      genereFichierJo24(c);
+      conversionJoWav(c,n);
+ break;
+case 26 :
+      genereFichierJo25(c);
+      conversionJoWav(c,n);
+ break;
+case 27 :
+      genereFichierJo26(c);
+      conversionJoWav(c,n);
+ break;
+case 28 :
+      genereFichierJo27(c);
+      conversionJoWav(c,n);
+ break;
+case 29 :
+      genereFichierJo28(c);
+      conversionJoWav(c,n);
+
+ break;
+case 30 :
+      genereFichierJo29(c);
+      conversionJoWav(c,n);
+ break;
+case 31 :
+      genereFichierJo30(c);
+      conversionJoWav(c,n);
+ break;
+
+case 32 :
+      genereFichierJo31(c);
+      conversionJoWav(c,n);
+ break;
+case 33 :
+      genereFichierJo32(c);
+      conversionJoWav(c,n);
+ break;
+case 34 :
+      genereFichierJo33(c);
+      conversionJoWav(c,n);
+ break;
+case 35 :
+      genereFichierJo34(c);
+      conversionJoWav(c,n);
+ break;
+case 36 :
+      genereFichierJo35(c);
+      conversionJoWav(c,n);
+ break;
+case 37 :
+      genereFichierJo36(c);
+      conversionJoWav(c,n);
+ break;
+case 38 :
+      genereFichierJo37(c);
+      conversionJoWav(c,n);
+ break;
+case 39 :
+      genereFichierJo38(c);
+      conversionJoWav(c,n);
+ break;
+case 40 :
+      genereFichierJo39(c);
+      conversionJoWav(c,n);
+ break;
+case 41 :
+      genereFichierJo40(c);
+      conversionJoWav(c,n);
+ break;
+
+default: 
+
+      genereFichierJo(c);
+      conversionJoWav(c,n);
+
+}
+     
+
+     }
 else
-  {    
-  snprintf(nomfichierwavacte, 40, "sox %c1.wav %c%d.wav", c, c, n);
-system(nomfichierwavacte);
-  }
-   }
-  else
    fclose(fichierwav);
 }
 }
@@ -480,6 +651,7 @@ printf ("fonctionpiano1 %d\n", valeur);
 }
 void clavier::fonctionpiano2(int valeur1)
 {
+
 printf ("fonctionpiano2 %d\n", valeur1); 
 
 }
