@@ -4,7 +4,6 @@
 void genereFichierJo1(char c)
 {
 
-
     int mesamplifront[2]; //son du n, la référence
     int mesdurerfront[2]; //son du n, la référence
     int mesvarampli[2]; //son du n, la référence
@@ -31,7 +30,7 @@ void genereFichierJo1(char c)
     }
 
 /**********************************************/
-jo joc = mesjo[c-'a'];
+ jo joc = mesjo[c-'a'];
 
   // Nom du fichier jo
   char nomfichierjo[32];
@@ -55,19 +54,116 @@ jo joc = mesjo[c-'a'];
 
 // ici commence la zone de travail pour l'apprenant
 
-  for(int duree = maforceh; duree>0; duree--)
+mesdurerfront[0] = ((joc.lagame * mesdurerfront[0]) * 0.01);
+mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
+
+	 int basehaut = 1;
+	 int basebas = 1;
+
+// multiplie
+  for(int duree = madurer; duree>0; duree--)
    {
+
+//monte en augmentant le plateau des durées
+
+    for(int laforcebbase = maforceh; laforcebbase > 0; laforcebbase--)
+     {
+
+         mesamplifront[1] -= mesvarampli[1];
+         mesamplifront[0] += mesvarampli[0];
+
+	 // respect des limites
+
+	if(mesamplifront[0]>239)
+	mesamplifront[0] = 239;
+
+	if(mesamplifront[1]<16)
+	mesamplifront[1] = 16;	
+
+	 basehaut = (mesamplifront[0] -2);
+	 basebas = (mesamplifront[1] +2);
+	
+
+
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basehaut, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basehaut, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
+
+     }
+//plateau
+
 
     for(int laforcebbase = maforceb; laforcebbase > 0; laforcebbase--)
      {
-      for(int i=0; i<2; i++)
-       {
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basehaut, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basehaut, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
-       }
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
      }
+
+
+
+//descend
+
+    for(int laforcebbase = maforceh; laforcebbase > 0; laforcebbase--)
+     {
+         mesamplifront[1] += mesvarampli[1];
+         mesamplifront[0] -= mesvarampli[0];
+
+	 // respect des limites
+
+	if(mesamplifront[1]>239)
+	mesamplifront[1] = 239;
+
+	if(mesamplifront[0]<16)
+	mesamplifront[0] = 16;	
+
+	 basehaut = (mesamplifront[0] -2);
+	 basebas = (mesamplifront[1] +2);
+	
+
+
+
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basehaut, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basehaut, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)basebas, (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)basebas, (unsigned char)mesdurerfront[0]);
+        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
      }
+
+
+
+
+// fin  multiplie
+   }
  
   fclose(fichierjo);
   fclose(fichierjoa);
