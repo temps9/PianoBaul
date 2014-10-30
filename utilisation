@@ -1,0 +1,23 @@
+PianoBaul a été conçu pour apporter un instrument de musique contenant un nombre astronomique de notes, plus de  4 suivit 10 puissance 50 sons, un instrument pesant dans les 100 ko tout compris.
+
+Comme cet instrument est construit sur le format audio abadie.jo, son utilisation est interdite en dehors du système d'exploitation linux ou FreeBSD.
+
+Une fois lancée, l'application ouvre une fenêtre contenant 26 touches de piano, et quelques touches de réglages en bas à droite.
+
+Les deux premières touches de réglages servent à sélectionner la forme de la variation, cela peut-être une licorne, un marteau acoustique …, il y a 65536 formes possibles 
+La touche de réglage 3 et 4 servent à donner les amplitudes de départ
+La touche de réglage 5 et 6 servent à donner les durées de départ
+La touche de réglage 7 et 8 servent à donner les variations d'amplitudes
+La touche de réglage 9 et 10 servent à donner les variations de durées
+La touche de réglage 11 sert à donner le nombre de répétition de la note
+La touche de réglage 12 sert à donner la valeur de la pente
+La touche de réglage 13 sert à donner la valeur du plateau
+La touche de réglage 14 sert à donner la valeur du tremolo
+La touche de réglage 15 sert à donner la valeur de force plus
+La touche de réglage 16 sert à donner la valeur de la zone mémoire
+
+Toutes les touches de réglages ne sont pas forcement utiles selon la forme utilisée.
+
+Description des formes : 
+forme 1 : simple licorne composé d'une suite de fronts croissant en amplitude, d'un plateau sans variation, et d'une suite de front décroissant.
+Valeurs de réglages préconisée : 133 133 50 50 12 12 0 0 7 50 0 0 0 0
