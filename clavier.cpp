@@ -669,7 +669,7 @@ selecdure1 = valeur4;
 }
 void clavier::fonctionpiano6 (int valeur5)
 {
-selecdure1 = valeur5; 
+selecdure2 = valeur5; 
 }
 void clavier::fonctionpiano7 (int valeur6)
 {
