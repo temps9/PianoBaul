@@ -30,7 +30,7 @@ void genereFichierJo4(char c)
     }
 
 /**********************************************/
-jo joc = mesjo[c-'a'];
+ jo joc = mesjo[c-'a'];
 
   // Nom du fichier jo
   char nomfichierjo[32];
@@ -54,19 +54,150 @@ jo joc = mesjo[c-'a'];
 
 // ici commence la zone de travail pour l'apprenant
 
-  for(int duree = maforceh; duree>0; duree--)
+mesdurerfront[0] = ((joc.lagame * mesdurerfront[0]) * 0.01);
+mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
+
+
+// multiplie
+  for(int duree = madurer; duree>0; duree--)
    {
 
-    for(int laforcebbase = maforceb; laforcebbase > 0; laforcebbase--)
-     {
-      for(int i=0; i<2; i++)
-       {
-        fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+// marteau acoustique
 
+	int montage1 = mesamplifront[0] - 2;
+	int montage2 = mesamplifront[0] - 4;
+	int montage3 = mesamplifront[1] + 2;
+	int montage4 = mesamplifront[1] + 4;
+
+	int montage5 = mesdurerfront[0] - maforceb;
+	int montage6 = mesdurerfront[0] - montremolo;
+	int montage7 = mesdurerfront[1] + maforceb;
+	int montage8 = mesdurerfront[1] + montremolo;
+
+    for(int laforcehbase = maforceh; laforcehbase > 0; laforcehbase--)
+     {
+
+         mesamplifront[0] -= mesvarampli[0];
+         montage1 -= (maforceplus + mesvarampli[0]);
+         montage2 -= (maforceplus + mesvarampli[0]);
+         mesamplifront[1] += mesvarampli[1];
+         montage3 += (maforceplus + mesvarampli[0]);
+         montage4 += (maforceplus + mesvarampli[0]);
+
+
+	montage5 = mesdurerfront[0] - maforceb;
+	montage6 = mesdurerfront[0] - montremolo;
+	montage7 = mesdurerfront[1] + maforceb;
+	montage8 = mesdurerfront[1] + montremolo;
+
+
+	 // respect des limites
+	if(mesdurerfront[0]>239)
+	mesdurerfront[0] = 239;
+
+	if(mesdurerfront[0]<6)
+	mesdurerfront[0] = 6;
+
+	if(mesdurerfront[1]>239)
+	mesdurerfront[1] = 239;
+
+	if(mesdurerfront[1]<6)
+	mesdurerfront[1] = 6;
+
+	if(montage1>239)
+	montage1 = 239;
+	if(montage1<16)
+	montage1 = 16;
+
+	if(montage2>239)
+	montage2 = 239;
+	if(montage2<16)
+	montage2 = 16;
+
+	if(montage3>239)
+	montage3 = 239;
+	if(montage3<16)
+	montage3 = 16;
+
+	if(montage4>239)
+	montage4 = 239;
+	if(montage4<16)
+	montage4 = 16;
+
+
+	if(mesamplifront[0]>239)
+	mesamplifront[0] = 239;
+
+	if(mesamplifront[0]<16)
+	mesamplifront[0] = 16;
+
+	if(mesamplifront[1]>239)
+	mesamplifront[1] = 239;
+
+	if(mesamplifront[1]<16)
+	mesamplifront[1] = 16;
+
+	if(montage5>239)
+	montage5 = 239;
+
+	if(montage5<16)
+	montage5 = 16;
+	if(montage6>239)
+	montage6 = 239;
+
+	if(montage6<16)
+	montage6 = 16;
+	if(montage7>239)
+	montage7 = 239;
+
+	if(montage7<16)
+	montage7 = 16;
+	if(montage8>239)
+	montage8 = 239;
+
+	if(montage8<16)
+	montage8 = 16;
+
+
+
+
+          fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+          fprintf(fichierjo,  "%c%c",    (char)montage1, (char)montage5);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage1, (unsigned char)montage5);
+          fprintf(fichierjo,  "%c%c",    (char) montage2, (char)montage6);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage2, (unsigned char)montage6);
+          fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+          fprintf(fichierjo,  "%c%c",    (char)montage3, (char)montage7);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage3, (unsigned char)montage7);
+          fprintf(fichierjo,  "%c%c",    (char) montage4, (char)montage8);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage4, (unsigned char)montage8);
+
+      for(int i = macombiendezonememoire; i > 0; i--)
+       {
+
+
+          fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+          fprintf(fichierjo,  "%c%c",    (char)montage1, (char)montage5);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage1, (unsigned char)montage5);
+          fprintf(fichierjo,  "%c%c",    (char) montage2, (char)montage6);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage2, (unsigned char)montage6);
+          fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+          fprintf(fichierjo,  "%c%c",    (char)montage3, (char)montage7);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage3, (unsigned char)montage7);
+          fprintf(fichierjo,  "%c%c",    (char) montage4, (char)montage8);
+          fprintf(fichierjoa, "%d %d\n", (unsigned char) montage4, (unsigned char)montage8);
        }
      }
-     }
+
+
+
+
+// fin  multiplie
+   }
  
   fclose(fichierjo);
   fclose(fichierjoa);
