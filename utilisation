@@ -20,18 +20,25 @@ Toutes les touches de réglages ne sont pas forcement utiles selon la forme util
 
 Description des formes : 
 forme 1 : simple licorne composé d'une suite de fronts croissant en amplitude, d'un plateau sans variation, et d'une suite de front décroissant.
-Valeurs de réglages préconisée : 133 133 50 50 12 12 0 0 1 7 50 0 0 0
+Valeurs de réglages préconisée :( 1 1 ) 133 133 50 50 12 12 0 0 1 7 50 0 0 0
 
 forme 2 : simple licorne composé d'une suite de fronts croissant en amplitude, d'un plateau sans variation, et d'une suite de front décroissant. La particularité ici est que les fronts sont sous forme de plateaux.
-Valeurs de réglages préconisée : 133 133 50 50 12 12 0 0 1 7 50 0 0 0
+Valeurs de réglages préconisée :( 2 1 ) 133 133 50 50 12 12 0 0 1 7 50 0 0 0
 
 forme 3 : simple licorne composé d'une suite de fronts croissant en amplitude, d'un plateau, et d'une suite de front décroissant. La particularité est la fontion tremolo et vinaigrette sur le plateau.
-Valeurs de réglages préconisée : 133 133 50 50 12 12 0 0 1 7 50 5 5 5
+Valeurs de réglages préconisée :( 3 1 ) 133 133 50 50 12 12 0 0 1 7 50 5 5 5
 
 forme 4 : Marteau acoustique composé d'une suite de fronts décroissant en amplitude à durées constantes.
 Valeurs de réglages préconisée :( 4 1 ) 222 20 50 50 3 3 0 0 1 27 2 2 4 10
 
 forme 5 : Marteau acoustique composé d'une suite de fronts décroissant en amplitude à durées croissantes.
 Valeurs de réglages préconisée :( 5 1 ) 230 20 10 10 3 3 5 5 1 20 5 5 5 5
+
+
+forme 6 : Licorne à durées constante, variations d'amplitude différente entre fronts montants et descendant.
+Valeurs de réglages préconisée :( 6 1 ) 130 120 50 50 20 20 0 0 1 50 50 2 4 0
+
+
+
 
 
