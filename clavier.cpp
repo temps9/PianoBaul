@@ -184,7 +184,7 @@ QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano7a->setRange(1, 10);
+piano7a->setRange(1, 200);
 QString nombre7a=QString::number(piano7a->value());
 QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano15 (int)));
         
