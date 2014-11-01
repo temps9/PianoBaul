@@ -5,15 +5,15 @@
 int quelpiano = 1;
 int selecampli1 =133;
 int selecampli2 =130;
-int selecdure1 =50;
-int selecdure2 =50;
+int selecdure1 =6;
+int selecdure2 =6;
 int selecvara1 =1;
 int selecvara2 =1;
-int selecvardu1 =0;
-int selecvardu2 =0;
+int selecvardu1 =1;
+int selecvardu2 =1;
 int selectduree = 1;
-int selectforceh = 30;
-int selectforceb = 30;
+int selectforceh = 1;
+int selectforceb = 1;
 int selecttremolo = 1;
 int selectforceplus = 1;
 int selectzonememoire = 1;
@@ -102,7 +102,7 @@ QObject::connect (piano7, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano6 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano8->setRange(0, 60);
+piano8->setRange(0, 200);
 QString nombre8=QString::number(piano8->value());
 QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano7 (int))); 
 
@@ -111,7 +111,7 @@ QObject::connect (piano8, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano7 
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano9->setRange(0, 60);
+piano9->setRange(0, 200);
 QString nombre9=QString::number(piano9->value());
 QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 (int)));  
      
@@ -130,7 +130,7 @@ QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano1a->setRange(0, 60);
+piano1a->setRange(0, 200);
 QString nombre1a=QString::number(piano1a->value());
 QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano9 (int)));
 
@@ -139,7 +139,7 @@ QObject::connect (piano1a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano9
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano2a->setRange(0, 60);
+piano2a->setRange(0, 200);
 QString nombre2a=QString::number(piano2a->value());
 QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano10 (int)));
 
@@ -148,7 +148,7 @@ QObject::connect (piano2a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);  
-piano3a->setRange(1, 200);
+piano3a->setRange(0, 200);
 QString nombre3a=QString::number(piano3a->value());
 QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano11 (int))); 
 
@@ -157,7 +157,7 @@ QObject::connect (piano3a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700); 
-piano4a->setRange(1, 100);
+piano4a->setRange(0, 200);
 QString nombre4a=QString::number(piano4a->value());
 QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano12 (int)));       
 
@@ -166,7 +166,7 @@ QObject::connect (piano4a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano5a->setRange(1, 200);
+piano5a->setRange(0, 200);
 QString nombre5a=QString::number(piano5a->value());
 QObject::connect (piano5a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano13 (int)));
 
@@ -184,7 +184,7 @@ QObject::connect (piano6a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
         650 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano7a->setRange(1, 200);
+piano7a->setRange(0, 200);
 QString nombre7a=QString::number(piano7a->value());
 QObject::connect (piano7a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano15 (int)));
         
