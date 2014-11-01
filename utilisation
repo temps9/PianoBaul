@@ -46,5 +46,11 @@ Valeurs de réglages préconisée :( 7 1 ) 128 126 80 100 20 20 0 0 1 20 1 0 2 
 forme 8 : introduction aux basculement des durée entre fronts montant et fronts descendant, la route du violon.
 Valeurs de réglages préconisée :( 8 1 ) 130 120 52 48 10 10 1 1 1 50 10 2 10 0
 
+forme 9 : simple basculement des durées entre fronts montant et fronts descendant type 2 fronts, son de violon.
+Attention nous travaillons ici sur les durées, les amplitudes montantes, constantes ou descenfante, 
+donnent des états d'équilibres différents, donc des sons différents. ici cas amplitudes montantes
+Valeurs de réglages préconisée :( 9 1 ) 130 128 14 7 2 2 2 2 1 1 1 0 7 0
+
+
 
 
