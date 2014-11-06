@@ -5,6 +5,9 @@ struct jo
 {
   int lagame;
   int invgame;
+  int deunavingtsix;
+  int devingtsixaun;
+  int rapportvingtsix;
 };
 
 #endif // _jo_h_
