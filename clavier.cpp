@@ -56,7 +56,7 @@ QObject::connect (piano2, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 
 piano3->setRange(1, 40);
 QString nombre3=QString::number(piano3->value());
 QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 (int))); 
-//piano3->setValue(35);
+//piano3->setValue(135);
         
        
  piano4 = new QSpinBox(this);
@@ -67,7 +67,7 @@ QObject::connect (piano3, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano2 
 piano4->setRange(16, 239);
 QString nombre4=QString::number(piano4->value());
 QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 (int)));
-//piano3->setValue(133);       
+//piano4->setValue(133);       
         
        
  piano5 = new QSpinBox(this);
@@ -78,6 +78,7 @@ QObject::connect (piano4, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano3 
 piano5->setRange(16, 239);
 QString nombre5=QString::number(piano5->value());
 QObject::connect (piano5, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano4 (int)));
+//piano5->setValue(50);  
 
  piano6 = new QSpinBox(this);
  piano6->setGeometry (300 * calcul_position.width () / 420,
@@ -116,7 +117,7 @@ QString nombre9=QString::number(piano9->value());
 QObject::connect (piano9, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano8 (int)));  
      
         
-  piano10_bouton = new QPushButton ("9", this);
+  piano10_bouton = new QPushButton ("Son", this);
   piano10_bouton->setFont (QFont ("Comic Sans MS", 10));
   piano10_bouton->setGeometry (380 * calcul_position.width () / 420,
         600 * calcul_position.height () / 700,
@@ -413,6 +414,7 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
   QObject::connect (aa_bouton, SIGNAL (clicked()), qApp, SLOT (quit ()));
   QObject::connect (piano10a_bouton, SIGNAL (clicked ()), this, SLOT (fonctionacte ()));
   QObject::connect (piano9a_bouton, SIGNAL (clicked ()), this, SLOT (fonctioneffacetout ()));
+  QObject::connect (piano10_bouton, SIGNAL (clicked ()), this, SLOT (interrupteur ()));
 
   for(char c ='a'; c<='z'; c++)
    {
@@ -421,7 +423,51 @@ QObject::connect (piano8a, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1
    }
   connect(sm, SIGNAL(mapped(int)), this, SLOT(fonctiontouche(int)));
 }
-
+int pourbouton10;
+void clavier::interrupteur ()
+{
+         if( pourbouton10 > 2 )
+         { 
+                piano2->setEnabled(false);
+                piano3->setEnabled(false);
+                piano4->setEnabled(false);
+                piano5->setEnabled(false);
+                piano6->setEnabled(false);
+                piano7->setEnabled(false);
+                piano8->setEnabled(false);
+                piano9->setEnabled(false);
+                piano1a->setEnabled(false);
+                piano2a->setEnabled(false);
+                piano3a->setEnabled(false);
+                piano4a->setEnabled(false);
+                piano5a->setEnabled(false);
+                piano6a->setEnabled(false);
+                piano7a->setEnabled(false);
+                piano8a->setEnabled(false);                
+                pourbouton10 = 1;
+         }
+         else
+         { 
+                piano2->setEnabled(true);
+                piano3->setEnabled(true);
+                piano4->setEnabled(true);
+                piano5->setEnabled(true);
+                piano6->setEnabled(true);
+                piano7->setEnabled(true);
+                piano8->setEnabled(true);
+                piano9->setEnabled(true);
+                piano1a->setEnabled(true);
+                piano2a->setEnabled(true);
+                piano3a->setEnabled(true);
+                piano4a->setEnabled(true);
+                piano5a->setEnabled(true);
+                piano6a->setEnabled(true);
+                piano7a->setEnabled(true);
+                piano8a->setEnabled(true);
+                
+                pourbouton10 = 3;
+         }
+}
 
 void clavier::fonctioneffacetout ()
 {
