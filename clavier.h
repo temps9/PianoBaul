@@ -111,6 +111,7 @@ class clavier : public QWidget
    void fonctionpiano16 (int valeur15);
    void fonctioneffacetout ();
    void fonctionacte ();
+   void interrupteur ();
 
 };
 
