@@ -55,11 +55,16 @@ forme 10 :
 Valeurs de réglages préconisée :( 10 1 ) 130 128 36 12 10 10 2 3 0 0 0 5 0 0
 
 
-
 forme 11 : vinaigrette à echo
 Valeurs de réglages préconisée :( 11 1 ) 130 128 20 20 12 12 2 2 1 7 20 5 3 5
 
-
 forme 15 : touche à variation d'amplitude
 Valeurs de réglages préconisée :( 15 1 ) 130 128 24 6 1 1 2 2 4 2 2 2 2 4
+
+forme 24 : touche à variation d'amplitude plateau tremolo vinaigrette
+Valeurs de réglages préconisée :( 24 1 ) 130 120 30 60 2 1 1 0 1 4 3 2 1 50
+
+
+forme 25 : touche à variation d'amplitude plateau tremolo mariage
+Valeurs de réglages préconisée :( 24 1 ) 130 120 30 60 2 1 1 0 1 4 3 2 1 50
 
