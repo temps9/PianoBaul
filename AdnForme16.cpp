@@ -35,19 +35,10 @@ void genereFichierJo16(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -86,18 +77,17 @@ int ajusteur2;
 	ajusteur1 = mesamplifront[0] + 2;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 
 
      }
@@ -107,18 +97,18 @@ int ajusteur2;
     for(int laforcebbase = maforceb; laforcebbase > 0; laforcebbase--)
      {
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+
      }
 
 
@@ -144,18 +134,18 @@ int ajusteur2;
 	ajusteur1 = mesamplifront[0] + 2;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
+
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
+
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
+
 
 
      }
@@ -167,7 +157,7 @@ int ajusteur2;
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
