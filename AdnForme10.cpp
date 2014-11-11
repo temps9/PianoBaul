@@ -35,19 +35,10 @@ void genereFichierJo10(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -112,15 +103,15 @@ avececo1[1]=mesamplifront[1] + (mesamplifront[1]*macombiendezonememoire)*0.05;
 	avececo1[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 
     for(int laforcebbaseb = maforceplus; laforcebbaseb > 0; laforcebbaseb--)
      {
 
         fprintf(fichierjo,  "%c%c",    (char)avececo[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo[i], (unsigned char)mesdurerfront[i]);
+
         fprintf(fichierjo,  "%c%c",    (char)avececo1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo1[i], (unsigned char)mesdurerfront[i]);
+
 	}
        }
      }
@@ -133,15 +124,15 @@ avececo1[1]=mesamplifront[1] + (mesamplifront[1]*macombiendezonememoire)*0.05;
        {
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 
     for(int laforcebbaseb = maforceplus; laforcebbaseb > 0; laforcebbaseb--)
      {
 
         fprintf(fichierjo,  "%c%c",    (char)avececo[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo[i], (unsigned char)mesdurerfront[i]);
+
         fprintf(fichierjo,  "%c%c",    (char)avececo1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo1[i], (unsigned char)mesdurerfront[i]);
+
 	}
 
        }
@@ -196,14 +187,14 @@ avececo1[1]=mesamplifront[1] + (mesamplifront[1]*macombiendezonememoire)*0.05;
 	avececo1[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 
     for(int laforcebbaseb = maforceplus; laforcebbaseb > 0; laforcebbaseb--)
      {
         fprintf(fichierjo,  "%c%c",    (char)avececo[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo[i], (unsigned char)mesdurerfront[i]);
+
         fprintf(fichierjo,  "%c%c",    (char)avececo1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)avececo1[i], (unsigned char)mesdurerfront[i]);
+
 	}
        }
      }
@@ -215,7 +206,7 @@ avececo1[1]=mesamplifront[1] + (mesamplifront[1]*macombiendezonememoire)*0.05;
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
