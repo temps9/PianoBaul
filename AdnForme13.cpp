@@ -35,19 +35,10 @@ void genereFichierJo13(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -122,7 +113,7 @@ if(mesamplifront[1]==128)
 	fronts1[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)fronts1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts1[i], (unsigned char)mesdurerfront[i]);
+
 
        }
       for(int i=0; i<2; i++)
@@ -140,7 +131,7 @@ if(mesamplifront[1]==128)
 	fronts2[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)fronts2[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts2[i], (unsigned char)mesdurerfront[i]);
+
 
        }
      }
@@ -199,9 +190,9 @@ basculeDe5 = 0;
 	mesdurerfront[i] = 6;
 
         fprintf(fichierjo,  "%c%c",    (char)fronts1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts1[i], (unsigned char)mesdurerfront[i]);
+
         fprintf(fichierjo,  "%c%c",    (char)fronts2[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts2[i], (unsigned char)mesdurerfront[i]);
+
 
        }
      }
@@ -227,7 +218,7 @@ basculeDe5 = 0;
 	fronts2[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)fronts2[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts2[i], (unsigned char)mesdurerfront[i]);
+
 
        }
       for(int i=0; i<2; i++)
@@ -245,7 +236,7 @@ basculeDe5 = 0;
 	fronts1[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)fronts1[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)fronts1[i], (unsigned char)mesdurerfront[i]);
+
 
        }
      }
@@ -256,7 +247,7 @@ basculeDe5 = 0;
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
