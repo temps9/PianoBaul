@@ -35,19 +35,11 @@ void genereFichierJo6(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
+
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -81,7 +73,6 @@ mesvarampli[1] = ((joc.lagame * mesvarampli[1]) * 0.01);
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
 
        }
      }
@@ -107,7 +98,7 @@ case 1 :
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
         }
 
     for(int laforcebbase = montremolo; laforcebbase > 0; laforcebbase--)
@@ -128,7 +119,7 @@ case 1 :
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
         }
 
 
@@ -144,7 +135,7 @@ case 1 :
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
         }
 
     for(int laforcebbase = montremolo; laforcebbase > 0; laforcebbase--)
@@ -168,7 +159,7 @@ case 1 :
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
         }
 
        }
@@ -187,7 +178,7 @@ default:
 
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 	}
 
     for(int laforcebbase = maforceplus; laforcebbase > 0; laforcebbase--)
@@ -208,7 +199,7 @@ default:
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 	}
 
 	}
@@ -225,7 +216,7 @@ default:
 
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 	}
 
     for(int laforcebbase = maforceplus; laforcebbase > 0; laforcebbase--)
@@ -249,7 +240,7 @@ default:
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 	}
 
 	}
@@ -279,7 +270,7 @@ abascule = 1;
 	mesamplifront[i] = 16;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 
        }
      }
@@ -291,7 +282,7 @@ abascule = 1;
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
