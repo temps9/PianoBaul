@@ -35,19 +35,10 @@ void genereFichierJo11(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -146,7 +137,7 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
 
 
           fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
        }
 
       for(int pit = maforceb; pit > 0; pit--)
@@ -155,22 +146,22 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage1[i], (char)montage1[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage1[i], (unsigned char)montage1[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage2[i], (char)montage2[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage2[i], (unsigned char)montage2[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage3[i], (char)montage3[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage3[i], (unsigned char)montage3[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char) montage4[i], (char)montage4[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage4[i], (unsigned char)montage4[i]);
+
 
        }
        }
@@ -183,7 +174,7 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
