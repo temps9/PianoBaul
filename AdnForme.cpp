@@ -35,9 +35,7 @@ void genereFichierJo(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
+
 
   // Fichier jo
   FILE* fichierjo;
@@ -45,12 +43,7 @@ void genereFichierJo(char c)
    {
     exit(-1);
    }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
-   {
-    exit(-1);
-   }
+
 
 // ici commence la zone de travail pour l'apprenant
 
@@ -81,7 +74,6 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
 
        }
      }
@@ -94,7 +86,6 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
        {
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
 
        }
      }
@@ -120,7 +111,6 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
 	mesamplifront[i] = 16;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
 
        }
      }
@@ -132,7 +122,6 @@ mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
 }
 
 // fin de la zone de travail de l'apprenant
