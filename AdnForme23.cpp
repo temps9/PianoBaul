@@ -35,19 +35,10 @@ void genereFichierJo23(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -87,39 +78,27 @@ int ajusteur2;
 	ajusteur2 = mesamplifront[1] + 2;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 
     for(int laforcebbasev = maforceplus; laforcebbasev > 0; laforcebbasev--)
      {
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
      }
 
 
      }
-//plateau
+//plateau tremolo vinaigrette
 
 double vieapropor = 0.01 * macombiendezonememoire;
 int vieapropor1 = 128;
@@ -182,125 +161,77 @@ if (ajusteur2<128)
 vieapropor4 = 128 - ((128 -ajusteur2)*vieapropor);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 /*********************/
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor2, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor2, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor4, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor4, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[1]);
 /************************/
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[1]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[0]);
 /*********************/
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[1]);
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor4, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor4, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[0]);
 /************************/
 
     for(int laforcebbasev = maforceplus; laforcebbasev > 0; laforcebbasev--)
      {
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 /*********************/
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor2, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor2, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor4, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor4, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[1]);
 /************************/
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[1]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[0]);
 /*********************/
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor1, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor1, (unsigned char)mesdurerfront[1]);
 
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor4, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor4, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)vieapropor3, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)vieapropor3, (unsigned char)mesdurerfront[0]);
 /************************/
      }
 
@@ -329,34 +260,22 @@ vieapropor4 = 128 - ((128 -ajusteur2)*vieapropor);
 	ajusteur2 = mesamplifront[1] + 2;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
 
     for(int laforcebbasev = maforceplus; laforcebbasev > 0; laforcebbasev--)
      {
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur1, (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur1, (unsigned char)mesdurerfront[0]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[0], (char)mesdurerfront[0]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[0], (unsigned char)mesdurerfront[0]);
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)ajusteur2, (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)ajusteur2, (unsigned char)mesdurerfront[1]);
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[1], (char)mesdurerfront[1]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[1], (unsigned char)mesdurerfront[1]);
      }
      }
 
@@ -367,7 +286,6 @@ vieapropor4 = 128 - ((128 -ajusteur2)*vieapropor);
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
 }
 
 // fin de la zone de travail de l'apprenant
