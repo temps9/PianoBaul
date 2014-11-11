@@ -35,19 +35,10 @@ void genereFichierJo12(char c)
   // Nom du fichier jo
   char nomfichierjo[32];
   snprintf(nomfichierjo, 32, "%c.jo", c);
-  // Nom du fichier joa
-  char nomfichierjoa[32];
-  snprintf(nomfichierjoa, 32, "%c.joa", c);
 
   // Fichier jo
   FILE* fichierjo;
   if (!(fichierjo = fopen(nomfichierjo, "wb")))
-   {
-    exit(-1);
-   }
-  // Fichier joa
-  FILE* fichierjoa;
-  if (!(fichierjoa = fopen(nomfichierjoa, "wb")))
    {
     exit(-1);
    }
@@ -82,7 +73,6 @@ int ajuste = joc.invgame * maforceh * 0.1;
 	mesamplifront[i] = 16;	
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
 
        }
      }
@@ -174,7 +164,7 @@ int ajuste = joc.invgame * maforceh * 0.1;
 
 
           fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
        }
 
       for(int pit = maforceb; pit > 0; pit--)
@@ -183,22 +173,22 @@ int ajuste = joc.invgame * maforceh * 0.1;
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage1[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage1[i], (unsigned char)mesdurerfront[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage2[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage2[i], (unsigned char)mesdurerfront[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char)montage3[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage3[i], (unsigned char)mesdurerfront[i]);
+
 	}
       for(int i = 0; i <2 ; i++)
        {
           fprintf(fichierjo,  "%c%c",    (char) montage4[i], (char)mesdurerfront[i]);
-          fprintf(fichierjoa, "%d %d\n", (unsigned char)montage4[i], (unsigned char)mesdurerfront[i]);
+
 
        }
        }
@@ -226,7 +216,7 @@ int ajuste = joc.invgame * maforceh * 0.1;
 	mesamplifront[i] = 16;
 
         fprintf(fichierjo,  "%c%c",    (char)mesamplifront[i], (char)mesdurerfront[i]);
-        fprintf(fichierjoa, "%d %d\n", (unsigned char)mesamplifront[i], (unsigned char)mesdurerfront[i]);
+
 
        }
      }
@@ -238,7 +228,7 @@ int ajuste = joc.invgame * maforceh * 0.1;
    }
  
   fclose(fichierjo);
-  fclose(fichierjoa);
+
 }
 
 // fin de la zone de travail de l'apprenant
