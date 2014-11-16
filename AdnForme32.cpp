@@ -6,7 +6,7 @@ void genereFichierJo32(char c)
     int mesamplifront[12]; //son du n, la référence
     int mesdurerfront[12]; //son du n, la référence
     int mesvarampli[12]; //son du n, la référence
-    int mesvardurer[2]; //son du n, la référence
+    int mesvardurer[12]; //son du n, la référence
     int madurer; //son du n, la référence
     int maforceh;
     int maforceb;
