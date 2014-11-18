@@ -48,8 +48,8 @@ double pourmacom4 = (madurer * 0.01);
 double pourmacom5 = (maforceplus * 0.1);
 double pourmacom6 = (macombiendezonememoire * 0.01);
 
-mesdurerfront[0] += ((joc.devingtsixaun ) * 0.01 * pourmacom5);
-mesdurerfront[1] += ((joc.devingtsixaun ) * 0.01 * pourmacom5);
+mesdurerfront[0] = int(mesdurerfront[0] * (joc.devingtsixaun ) * 0.01 * pourmacom5);
+mesdurerfront[1] = int(mesdurerfront[1] * (joc.devingtsixaun ) * 0.01 * pourmacom5);
 
 int variance1 = int(calculpossible * pourmacom);
 if (variance1<1)
