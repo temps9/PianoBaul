@@ -47,7 +47,7 @@ void genereFichierJo37(char c);
 void genereFichierJo38(char c);
 void genereFichierJo39(char c);
 void genereFichierJo40(char c);
-
+void genereFichierJo41(char c);
 void conversionJoWav(char c, int n);
 
 #endif // _convertisseur_h_
