@@ -43,7 +43,7 @@ clavier::clavier ():QWidget ()
         600 * calcul_position.height () / 700,
         20 * calcul_position.width () / 420,
         50 * calcul_position.height () / 700);
-piano2->setRange(1, 40);
+piano2->setRange(1, 41);
 QString nombre2=QString::number(piano2->value());
 QObject::connect (piano2, SIGNAL(valueChanged(int)), this, SLOT (fonctionpiano1 (int)));
  
@@ -1035,6 +1035,10 @@ case 40 :
  break;
 case 41 :
       genereFichierJo40(c);
+      conversionJoWav(c,n);
+ break;
+case 42 :
+      genereFichierJo41(c);
       conversionJoWav(c,n);
  break;
 
