@@ -47,7 +47,8 @@ HEADERS += clavier.h \
            AdnForme37.h \
            AdnForme38.h \
            AdnForme39.h \
-           AdnForme40.h
+           AdnForme40.h \
+           AdnForme41.h
 SOURCES += main.cpp \
            clavier.cpp \
            fronts.cpp \
@@ -92,7 +93,8 @@ SOURCES += main.cpp \
            AdnForme37.cpp \
            AdnForme38.cpp \
            AdnForme39.cpp \
-           AdnForme40.cpp
+           AdnForme40.cpp \
+           AdnForme41.cpp
 
 
 
