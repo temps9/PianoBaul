@@ -1,17 +1,69 @@
 #include "AdnForme41.h"
 
 // Génère les fichiers c.jo et c.joa
-void genereFichierJo41(int piste,int quelpiano2,int quelpiano3,int quelpiano4,int quelpiano5,int quelpiano6,int quelpiano7,int quelpiano8,int quelpiano9,int quelpiano10,int quelpiano11,int quelpiano12,int quelpiano13,int quelpiano14,int quelpiano15)
+void genereFichierJo41(char c)
 {
 
     int mesamplifront[22]; //son du n, la référence
     int mesdurerfront; //son du n, la référence
+    int mesvarampli[2]; //son du n, la référence
+    int mesvardurer[2]; //son du n, la référence
     int madurer; //son du n, la référence
     int maforceh;
+    int maforceb;
+    int montremolo;
     int maforceplus;
+    int macombiendezonememoire;
+
+    int quelpiano2;
+    int quelpiano3;
+    int quelpiano4;
+    int quelpiano5;
+    int quelpiano6;
+    int quelpiano7;
+    int quelpiano8;
+    int quelpiano9;
+    int quelpiano10;
+    int quelpiano11;
+    int quelpiano12;
+    int quelpiano13;
+    int quelpiano14;
+    int quelpiano15;
 
 
+   FILE* fichierdesfronts = NULL;
 
+ 
+    fichierdesfronts = fopen("fronts.txt", "r");
+ 
+    if (fichierdesfronts != NULL)
+    {
+        fscanf(fichierdesfronts, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d", &quelpiano2, &quelpiano3, &quelpiano4, &quelpiano5, &quelpiano6, &quelpiano7, &quelpiano8, &quelpiano9, &quelpiano10, &quelpiano11, &quelpiano12, &quelpiano13, &quelpiano14, &quelpiano15);       
+ 
+        fclose(fichierdesfronts);
+
+    }
+
+/**********************************************/
+ jo joc = mesjo[c-'a'];
+
+  // Nom du fichier jo
+  char nomfichierjo[32];
+  snprintf(nomfichierjo, 32, "%c.jo", c);
+
+  // Fichier jo
+  FILE* fichierjo;
+  if (!(fichierjo = fopen(nomfichierjo, "wb")))
+   {
+    exit(-1);
+   }
+
+// ici commence la zone de travail pour l'apprenant
+
+mesdurerfront = ((joc.lagame * mesdurerfront) * 0.01);
+
+
+	 int basehaut = 1;
 if(quelpiano2<120)
    {
     mesamplifront[0] = 128 + quelpiano2;
@@ -137,15 +189,7 @@ mesdurerfront = quelpiano13;
 maforceplus = quelpiano14;
 maforceh = quelpiano15;
 
-  // Nom du fichier jo
-  char nomfichierjo[32];
-  snprintf(nomfichierjo, 32, "%d.jo", piste);
-  // Fichier jo
-  FILE* fichierjo;
-  if (!(fichierjo = fopen(nomfichierjo, "ab")))
-   {
-    exit(-1);
-   }
+
 // ici commence la zone de travail pour l'apprenant
 
 
