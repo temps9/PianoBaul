@@ -1,7 +1,7 @@
 #include "AdnForme3.h"
 
-// Génère les fichiers piste.jo
-void genereFichierJo3(int piste,int quelpiano2,int quelpiano3,int quelpiano4,int quelpiano5,int quelpiano6,int quelpiano7,int quelpiano8,int quelpiano9,int quelpiano10,int quelpiano11,int quelpiano12,int quelpiano13,int quelpiano14,int quelpiano15)
+// Génère les fichiers c.jo et c.joa
+void genereFichierJo3(char c)
 {
 
     int mesamplifront[2]; //son du n, la référence
@@ -16,31 +16,38 @@ void genereFichierJo3(int piste,int quelpiano2,int quelpiano3,int quelpiano4,int
     int macombiendezonememoire;
 
 
-mesamplifront[0] = quelpiano2; //octet 3
-mesamplifront[1] = quelpiano3;
-mesdurerfront[0] = quelpiano4;
-mesdurerfront[1] = quelpiano5;
-mesvarampli[0] = quelpiano6;
-mesvarampli[1] = quelpiano7;
-mesvardurer[0] = quelpiano8;
-mesvardurer[1] = quelpiano9;
-madurer = quelpiano10; //octet 11
-maforceh = quelpiano11;
-maforceb = quelpiano12;
-montremolo = quelpiano13;
-maforceplus = quelpiano14;
-macombiendezonememoire = quelpiano15;
+   FILE* fichierdesfronts = NULL;
+
+ 
+    fichierdesfronts = fopen("fronts.txt", "r");
+ 
+    if (fichierdesfronts != NULL)
+    {
+        fscanf(fichierdesfronts, "%d %d %d %d %d %d %d %d %d %d %d %d %d %d", &mesamplifront[0], &mesamplifront[1], &mesdurerfront[0], &mesdurerfront[1], &mesvarampli[0], &mesvarampli[1], &mesvardurer[0], &mesvardurer[1], &madurer, &maforceh, &maforceb, &montremolo, &maforceplus, &macombiendezonememoire);       
+ 
+        fclose(fichierdesfronts);
+
+    }
+
 /**********************************************/
+ jo joc = mesjo[c-'a'];
+
   // Nom du fichier jo
   char nomfichierjo[32];
-  snprintf(nomfichierjo, 32, "%d.jo", piste);
+  snprintf(nomfichierjo, 32, "%c.jo", c);
+
   // Fichier jo
   FILE* fichierjo;
-  if (!(fichierjo = fopen(nomfichierjo, "ab")))
+  if (!(fichierjo = fopen(nomfichierjo, "wb")))
    {
     exit(-1);
    }
+
 // ici commence la zone de travail pour l'apprenant
+
+mesdurerfront[0] = ((joc.lagame * mesdurerfront[0]) * 0.01);
+mesdurerfront[1] = ((joc.lagame * mesdurerfront[1]) * 0.01);
+
 
 // multiplie
   for(int duree = madurer; duree>0; duree--)
